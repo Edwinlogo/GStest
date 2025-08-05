@@ -4,11 +4,6 @@
     touch-action: none;
 }
 
-  /* Intenta ocultar el texto inferior del widget */
-  elevenlabs-convai ~ div {
-    display: none !important;
-  }
-
 body {
     overflow: hidden;
     font-family: 'Arial', sans-serif;
@@ -340,3 +335,11 @@ button:active {
 
     background-color: #fff8;
 }
+
+
+<style>
+  /* Oculta el texto de marca de ElevenLabs */
+  div:has(> a[href*="elevenlabs.io"]) {
+    display: none !important;
+  }
+</style>
