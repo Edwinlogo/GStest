@@ -3,6 +3,12 @@
     padding: 0;
     touch-action: none;
 }
+
+  /* Intenta ocultar el texto inferior del widget */
+  elevenlabs-convai ~ div {
+    display: none !important;
+  }
+
 body {
     overflow: hidden;
     font-family: 'Arial', sans-serif;
