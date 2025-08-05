@@ -4,8 +4,24 @@
 	
 	
 	<elevenlabs-convai agent-id="agent_2801k1xpak30egftsexsxcdvpwwb"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-	
-	
+
+
+
+	    
+	<script> 
+    window.addEventListener('DOMContentLoaded', () => {
+      const observer = new MutationObserver(() => {
+        const brandingText = document.querySelector('div[style*="Powered by ElevenLabs"]');
+        if (brandingText) {
+          brandingText.style.display = 'none';
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
+  </script>
+
+
+	    
 	
 	
         <title>Edwin</title>
