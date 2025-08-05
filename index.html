@@ -8,17 +8,29 @@
 
 
 	    
-	<script> 
-    window.addEventListener('DOMContentLoaded', () => {
-      const observer = new MutationObserver(() => {
-        const brandingText = document.querySelector('div[style*="Powered by ElevenLabs"]');
-        if (brandingText) {
-          brandingText.style.display = 'none';
-        }
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
+	    <script>
+  const eliminarTextoElevenLabs = () => {
+    const elementos = document.querySelectorAll('div');
+
+    elementos.forEach(el => {
+      if (el.textContent?.trim() === "Powered by ElevenLabs Conversational AI") {
+        el.remove();
+      }
     });
-  </script>
+  };
+
+  // Ejecuta al cargar y sigue observando cambios
+  const observer = new MutationObserver(eliminarTextoElevenLabs);
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // Ejecuta también una vez que la página haya cargado
+  window.addEventListener('load', eliminarTextoElevenLabs);
+</script>
+
+
+
+
+
 
 
 	    
